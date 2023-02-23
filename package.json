@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "generate:prisma": "npx prisma migrate dev --name init",
+    "start:prod": "npm run generate:prisma && nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "express-validator": "^6.14.1"
+    "express-validator": "^6.15.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
